@@ -24,7 +24,7 @@ eureka:
         prefer-ip-address: true
     client:
         service-url:
-            defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
+            defaultZone: http://microservice1.graeshoppe.divisotech.com:8761/eureka/
 
 spring:
     profiles:
@@ -41,8 +41,8 @@ spring:
         stream:
             kafka:
                 binder:
-                    brokers: localhost
-                    zk-nodes: localhost
+                    brokers: keycloak.graeshoppe.divisotech.com:9092
+                    zk-nodes: keycloak.graeshoppe.divisotech.com:2181
             bindings:
                 output:
                     destination: topic-jhipster
