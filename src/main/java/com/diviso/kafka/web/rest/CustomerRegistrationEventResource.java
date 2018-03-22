@@ -1,7 +1,7 @@
 package com.diviso.kafka.web.rest;
 
 import com.diviso.kafka.domain.Customer;
-import com.diviso.kafka.service.PublishCustomerEvent;
+import com.diviso.kafka.service.CustomerService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,10 +22,10 @@ public class CustomerRegistrationEventResource {
 
     private final Logger log = LoggerFactory.getLogger(CustomerRegistrationEventResource.class);
 
-    PublishCustomerEvent publishCustomerEvent;
+    CustomerService customerService;
     
-    public CustomerRegistrationEventResource(PublishCustomerEvent publishCustomerEvent) {
-    	this.publishCustomerEvent=publishCustomerEvent;
+    public CustomerRegistrationEventResource(CustomerService customerService) {
+    	this.customerService=customerService;
 	}
     /**
      * GET  /authenticate : check if the user is authenticated, and return its login.
@@ -37,7 +37,7 @@ public class CustomerRegistrationEventResource {
     public String createCustomer(@RequestBody Customer customer) {
     	
         log.debug("REST request to Create Customer : {}",customer);
-        publishCustomerEvent.send(customer);
+        customerService.send(customer);
         return "SuccessFul";
     }
 

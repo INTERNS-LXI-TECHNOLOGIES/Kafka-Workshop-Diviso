@@ -1,4 +1,4 @@
-package com.diviso.kafka.service;
+package com.diviso.kafka.service.impl;
 
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.MessageHeaders;
@@ -7,12 +7,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.MimeTypeUtils;
 
 import com.diviso.kafka.domain.Customer;
+import com.diviso.kafka.service.CustomerService;
 import com.diviso.kafka.stream.CustomerStream;
 
 @Service
-public class PublishCustomerEvent {
+public class CustomerServiceImpl implements CustomerService{
 
-		public PublishCustomerEvent(CustomerStream customerStream) {
+		public CustomerServiceImpl(CustomerStream customerStream) {
 			this.customerStream = customerStream;
 		}
 
