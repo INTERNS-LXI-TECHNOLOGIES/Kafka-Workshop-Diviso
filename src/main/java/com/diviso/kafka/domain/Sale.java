@@ -27,8 +27,4 @@ public class Sale {
 	public void setProductLines(List<ProductLine> productLines) {
 		this.productLines = productLines;
 	}
-	
-	
-	
-
 }
