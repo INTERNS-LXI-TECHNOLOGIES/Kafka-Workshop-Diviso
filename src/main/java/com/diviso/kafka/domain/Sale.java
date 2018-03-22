@@ -4,16 +4,13 @@
  */
 package com.diviso.kafka.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author vishnu
  *
  */
 public class Sale {
 	private Long customerId;
-	private List<ProductLine> productLines = new ArrayList<ProductLine>();
+	private ProductLine productLine = new ProductLine();
 	
 	public Long getCustomerId() {
 		return customerId;
@@ -21,14 +18,10 @@ public class Sale {
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
-	public List<ProductLine> getProductLines() {
-		return productLines;
+	public ProductLine getProductLine() {
+		return productLine;
 	}
-	public void setProductLines(List<ProductLine> productLines) {
-		this.productLines = productLines;
+	public void setProductLine(ProductLine productLine) {
+		this.productLine = productLine;
 	}
-	
-	
-	
-
 }
