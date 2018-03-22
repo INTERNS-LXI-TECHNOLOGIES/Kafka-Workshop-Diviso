@@ -35,6 +35,7 @@ public class SaleServiceImpl implements SaleService {
 	
 	public boolean sale(Long customerId, ProductLine productLine) {
 		log.debug("REST request to create sale event by customerId, productLine : {}"+ customerId, productLine);
+		log.info(" "+productLine.getProductName()+productLine.getProductId());
 		
 		Sale sale = new Sale();
 		sale.setCustomerId(customerId);
