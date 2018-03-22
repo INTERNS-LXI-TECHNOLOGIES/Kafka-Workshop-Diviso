@@ -1,7 +1,7 @@
 package com.diviso.kafka.domain;
 
 public class Payment {
-	
+
 	private String status;
 	private Double total;
 	private Long transactionId;
