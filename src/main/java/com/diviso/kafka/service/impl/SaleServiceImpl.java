@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.stereotype.Service;
 import org.springframework.util.MimeTypeUtils;
 
 import com.diviso.kafka.domain.ProductLine;
@@ -21,6 +22,7 @@ import com.diviso.kafka.web.rest.SaleController;
  * @author vishnu
  *
  */
+@Service
 public class SaleServiceImpl implements SaleService {
 	
 	 private final Logger log = LoggerFactory.getLogger(SaleServiceImpl.class);
