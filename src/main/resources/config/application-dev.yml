@@ -56,8 +56,6 @@ spring:
                 paymentoutput:
                     destination: PaymentTopic
                     contentType: application/json                
-                                    
-                                   
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:h2:file:./target/h2db/db/kafkajhipster;DB_CLOSE_DELAY=-1
