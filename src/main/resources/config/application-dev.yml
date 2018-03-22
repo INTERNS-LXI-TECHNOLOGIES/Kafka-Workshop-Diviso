@@ -44,12 +44,18 @@ spring:
                     brokers: keycloak.graeshoppe.divisotech.com:9092
                     zk-nodes: keycloak.graeshoppe.divisotech.com:2181
             bindings:
-                messages-out:
-                    destination: customerRegistration
+                loyalityoutput:
+                    destination: LoyalityTopic
                     contentType: application/json
-                messages-in:
-                    destination: customerRegistration
+                saleoutput:
+                    destination: SaleTopic
+                    contentType: application/json  
+                registrationoutput:
+                    destination: RegistrationTopic
                     contentType: application/json
+                paymentoutput:
+                    destination: PaymentTopic
+                    contentType: application/json                
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:h2:file:./target/h2db/db/kafkajhipster;DB_CLOSE_DELAY=-1
