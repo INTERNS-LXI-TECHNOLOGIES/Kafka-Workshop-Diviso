@@ -3,6 +3,7 @@
  */
 package com.diviso.kafka.service;
 
+import com.diviso.kafka.domain.ProductLine;
 import com.diviso.kafka.domain.Sale;
 
 /**
@@ -10,6 +11,6 @@ import com.diviso.kafka.domain.Sale;
  *
  */
 public interface SaleService {
-	public abstract void sale(Sale sale);
+	public abstract boolean sale(Long customerId, ProductLine productLine);
 
 }
