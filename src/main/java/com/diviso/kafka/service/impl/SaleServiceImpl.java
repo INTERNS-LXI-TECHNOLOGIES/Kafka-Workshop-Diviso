@@ -35,12 +35,8 @@ public class SaleServiceImpl implements SaleService {
 		this.messageStream = messageStream;
 	}
 	
-	public boolean sale(Long customerId, List<ProductLine> productLines) {
-		log.debug("REST request to create sale event by customerId, productLine : {}"+ customerId, productLines);
-		
-		Sale sale = new Sale();
-		sale.setCustomerId(customerId);
-		sale.setProductLines(productLines);
+	public boolean sale(Sale sale) {
+		log.debug("REST request to create sale event by sale : {}"+ sale);
 		
 		MessageChannel messageChannel = messageStream.getSaleOutputStream();
 		return messageChannel.send(

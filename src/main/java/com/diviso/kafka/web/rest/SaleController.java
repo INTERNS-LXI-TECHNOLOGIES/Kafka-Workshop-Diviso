@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.diviso.kafka.domain.ProductLine;
+import com.diviso.kafka.domain.Sale;
 import com.diviso.kafka.service.SaleService;
 
 /**
@@ -28,11 +29,11 @@ public class SaleController {
 		 this.saleService = saleService;
 	 }
 	 
-	 @PostMapping("/sale/{customerId}")
-	 public boolean salePublish(@RequestBody List<ProductLine> productLines, @PathVariable Long customerId) {
-		log.debug("REST request to create sale event by customerId, productLine : {}"+ customerId, productLines);
+	 @PostMapping("/sale")
+	 public boolean salePublish(@RequestBody Sale sale) {
+		log.debug("REST request to create sale event by sale"+sale);
 		
-		return saleService.sale(customerId, productLines); 		
+		return saleService.sale(sale); 		
 	 }
 
 }
