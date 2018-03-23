@@ -29,10 +29,10 @@ public class SaleController {
 	 }
 	 
 	 @PostMapping("/sale/{customerId}")
-	 public boolean salePublish(@RequestBody List<ProductLine> productLine, @PathVariable Long customerId) {
-		log.debug("REST request to create sale event by customerId, productLine : {}"+ customerId, productLine);
+	 public boolean salePublish(@RequestBody List<ProductLine> productLines, @PathVariable Long customerId) {
+		log.debug("REST request to create sale event by customerId, productLine : {}"+ customerId, productLines);
 		
-		return saleService.sale(customerId, productLine); 		
+		return saleService.sale(customerId, productLines); 		
 	 }
 
 }

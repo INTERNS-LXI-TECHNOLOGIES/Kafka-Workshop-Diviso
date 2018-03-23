@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Sale {
 	private Long customerId;
-	private List<ProductLine> productLine = new ArrayList<ProductLine>();
+	private List<ProductLine> productLines = new ArrayList<ProductLine>();
 	
 	public Long getCustomerId() {
 		return customerId;
@@ -21,10 +21,11 @@ public class Sale {
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
-	public List<ProductLine> getProductLine() {
-		return productLine;
+	public List<ProductLine> getProductLines() {
+		return productLines;
 	}
-	public void setProductLine(List<ProductLine> productLine) {
-		this.productLine = productLine;
+	public void setProductLines(List<ProductLine> productLines) {
+		this.productLines = productLines;
 	}
+	
 }

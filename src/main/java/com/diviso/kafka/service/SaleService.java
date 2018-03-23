@@ -13,6 +13,6 @@ import com.diviso.kafka.domain.Sale;
  *
  */
 public interface SaleService {
-	public abstract boolean sale(Long customerId, List<ProductLine> productLine);
+	public abstract boolean sale(Long customerId, List<ProductLine> productLines);
 
 }
