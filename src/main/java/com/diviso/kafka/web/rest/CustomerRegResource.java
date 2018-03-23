@@ -18,13 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api")
-public class CustomerRegistrationEventResource {
+public class CustomerRegResource {
 
-    private final Logger log = LoggerFactory.getLogger(CustomerRegistrationEventResource.class);
+    private final Logger log = LoggerFactory.getLogger(CustomerRegResource.class);
 
     CustomerService customerService;
     
-    public CustomerRegistrationEventResource(CustomerService customerService) {
+    public CustomerRegResource(CustomerService customerService) {
     	this.customerService=customerService;
 	}
     /**
