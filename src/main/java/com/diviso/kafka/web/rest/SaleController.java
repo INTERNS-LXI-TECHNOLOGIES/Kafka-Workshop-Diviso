@@ -1,5 +1,7 @@
 package com.diviso.kafka.web.rest;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +29,7 @@ public class SaleController {
 	 }
 	 
 	 @PostMapping("/sale/{customerId}")
-	 public boolean salePublish(@RequestBody ProductLine productLine, @PathVariable Long customerId) {
+	 public boolean salePublish(@RequestBody List<ProductLine> productLine, @PathVariable Long customerId) {
 		log.debug("REST request to create sale event by customerId, productLine : {}"+ customerId, productLine);
 		
 		return saleService.sale(customerId, productLine); 		

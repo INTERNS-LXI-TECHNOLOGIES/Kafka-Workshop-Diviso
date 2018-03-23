@@ -3,6 +3,8 @@
  */
 package com.diviso.kafka.service.impl;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.messaging.MessageChannel;
@@ -33,9 +35,8 @@ public class SaleServiceImpl implements SaleService {
 		this.messageStream = messageStream;
 	}
 	
-	public boolean sale(Long customerId, ProductLine productLine) {
+	public boolean sale(Long customerId, List<ProductLine> productLine) {
 		log.debug("REST request to create sale event by customerId, productLine : {}"+ customerId, productLine);
-		log.info(" "+productLine.getProductName()+productLine.getProductId());
 		
 		Sale sale = new Sale();
 		sale.setCustomerId(customerId);
